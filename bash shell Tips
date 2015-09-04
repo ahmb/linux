@@ -1,7 +1,7 @@
 #bash_profile is run for login shells and bashrc is run for noninteractive login shells i.e not a first time login for a user
 #to consolidate configuration into one file instead of two:
 #Add the following lines to .bash_profile:
-
+#edit: or simply create a symbolic link :p
 if [ -f ~/.bashrc ]; then
    source ~/.bashrc
 fi
