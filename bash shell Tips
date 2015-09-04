@@ -12,3 +12,22 @@ export HISTSIZE=100000                   # big big history
 export HISTFILESIZE=100000               # big big history
 shopt -s histappend                      # append to history, don't overwrite it
 
+-#how to record terminal session data; include the following in bashrc file (continuation of the above)
+-script -qta /media/commandHistoryLog
+-q:quiet
+-t:include times
+-a:append to file 
+
+'
+##Changing the /tmp Cleanup Frequency
+
+The default setting that tells your system to clear /tmp at reboot is held in the /etc/default/rcS file. The value we’ll look at is TMPTIME.
+The current value of TMPTIME=0 says delete files at reboot despite the age of the file. Changing this value to a different (positive) number will change the number of days a file can survive in /tmp.
+TMPTIME=7
+This setting would allow files to stay in /tmp until they are a week old, and then delete them on the next reboot. A negative number (TMPTIME=-1) tells the system to never delete anything in /tmp. This is probably not something you want, but is available.
+'
+
+
+##USEFUL COMMANDS
+lsof #see processes which may be locking a certain file
+
