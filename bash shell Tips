@@ -5,3 +5,9 @@
 if [ -f ~/.bashrc ]; then
    source ~/.bashrc
 fi
+
+#how to record terminal session data; include the following in bashrc file (continuation of the above)
+script -qta /media/commandHistoryLog
+q:quiet
+t:include times
+a:append to file 
