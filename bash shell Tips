@@ -13,6 +13,9 @@ export HISTFILESIZE=100000               # big big history
 shopt -s histappend                      # append to history, don't overwrite it
 
 
+##Change the prompt 
+PS1="[\d \t \u@\h:\w ] $ "
+
 #how to record terminal session data; include the following in bashrc file (continuation of the above)
 #touch /logs/terminalLogs/bashLog
 #chmod 777 /logs/terminalLogs/bashLog
