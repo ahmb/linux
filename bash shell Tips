@@ -12,11 +12,14 @@ export HISTSIZE=100000                   # big big history
 export HISTFILESIZE=100000               # big big history
 shopt -s histappend                      # append to history, don't overwrite it
 
--#how to record terminal session data; include the following in bashrc file (continuation of the above)
--script -qta /media/commandHistoryLog
--q:quiet
--t:include times
--a:append to file 
+
+#how to record terminal session data; include the following in bashrc file (continuation of the above)
+#touch /logs/terminalLogs/bashLog
+#chmod 777 /logs/terminalLogs/bashLog
+script -qta /logs/terminalLogs/bashLog
+#-q:quiet
+#-t:include times
+#-a:append to file 
 
 '
 ##Changing the /tmp Cleanup Frequency
