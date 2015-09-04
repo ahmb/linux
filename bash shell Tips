@@ -17,15 +17,23 @@ shopt -s histappend                      # append to history, don't overwrite it
 PS1="[\d \t \u@\h:\w ] $ "
 
 #how to record terminal session data; include the following in bashrc file (continuation of the above)
-#touch /logs/terminalLogs/bashLog
-#chmod 777 /logs/terminalLogs/bashLog
-script -qta /logs/terminalLogs/bashLog
+if [ -z "$UNDER_SCRIPT" ]; then
+        logdir=$HOME/terminal-logs
+        if [ ! -d $logdir ]; then
+               	mkdir $logdir
+        fi
+        logfile=$logdir/$(date +%B.%Y).log
+        export UNDER_SCRIPT=$logfile
+        script -f -a -q $logfile
+        exit
+fi
 #-q:quiet
 #-t:include times
 #-a:append to file 
 #and then to make sure that the exit command is provided to the prior script command so that all data does infact get written to file
-trap "exit" SIGHUP SIGINT SIGTERM
+#trap "exit" SIGHUP SIGINT SIGTERM
 #or for login shells: dont forget to put "Exit" in the .bash_logout file (the default config files locates at /etc/skel/.bash_logout) - the exit is what writes to file
+
 '
 ##Changing the /tmp Cleanup Frequency
 
