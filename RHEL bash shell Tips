@@ -48,6 +48,31 @@ yum install psacct, sysstat
 systemctl enbale psacct.service, sysstat
 systemctl start psacct.service, sysstat
 
+#get the code from github
+yum install git
+#git clone htttp://blablabla
+
+
+#start with the python bootstrapping 
+#verify python version
+python -V
+#make sure that python package management is installed
+curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+python get-pip.py
+
+#create a virtual environment
+sudo pip install virtualenv
+virtualenv  [name]
+source venv/bin/activate
+#to deactivate the virtualenv please use the following commands:
+#deactive 
+
+#install python packages from requirements files
+sudo pip install -r ./requirements.txt
+
+#to view all the packages installed by pip
+#only works inside the python interpreter 
+sorted(["%s==%s" % (i.key, i.version) for i in pip.get_installed_distributions()])
 
 
 ##USEFUL COMMANDS
