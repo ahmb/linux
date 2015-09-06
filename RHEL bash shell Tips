@@ -73,7 +73,7 @@ sudo pip install -r ./requirements.txt
 #to view all the packages installed by pip
 #only works inside the python interpreter 
 sorted(["%s==%s" % (i.key, i.version) for i in pip.get_installed_distributions()])
-
+#or pip list/pip freeze
 
 ##USEFUL COMMANDS
 lsof #see processes which may be locking a certain file
