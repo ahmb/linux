@@ -75,6 +75,8 @@ sudo pip install -r ./requirements.txt
 sorted(["%s==%s" % (i.key, i.version) for i in pip.get_installed_distributions()])
 #or pip list/pip freeze
 
+#find out cpu usage statistics 
+#ps -eo pcpu,pid,user,args | sort -r -k1 | less
 ##USEFUL COMMANDS
 lsof #see processes which may be locking a certain file
 
